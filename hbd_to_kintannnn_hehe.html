@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Card</title>
+  <style>
+    body {
+      background-color: whitesmoke;
+    }
+    .body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    .birthdayCard {
+      border-radius: 30px;
+      position: relative;
+      width: 420px;
+      height: 500px;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      transform: perspective(2000px);
+      transition: 1s;
+    }
+    .cardFront {
+      position: relative;
+      background-color: #fef0f8;
+      width: 420px;
+      height: 500px;
+      border-radius: 0 15px 15px 0;
+      overflow: hidden;
+      transform-origin: left;
+      box-shadow: inset 100px 20px 100px rgba(118, 118, 118, 0.2),
+        30px 0 50px rgba(118, 118, 118, 0.2);
+      transition: 0.6s;
+    }
+    .bdHat {
+      width: 140px;
+      height: auto;
+      left: 7%;
+      position: absolute;
+      z-index: 4;
+    }
+    .balloons {
+      position: absolute;
+      width: 270px;
+      height: auto;
+      right: -10px;
+      top: 30px;
+    }
+    .cat {
+      position: absolute;
+      width: 180px;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .taaImg {
+      display: flex;
+      justify-content: center;
+      top: 120px;
+      left: 15px;
+      position: relative;
+      width: 150px;
+      height: auto;
+      margin-left: 50px; 
+      z-index: 1;
+    }
+    .happy {
+      text-align: center;
+      left: 15%;
+      top: 84%;
+      font-size: 1.5em;
+      font-family: 'Miltonian Tattoo', serif;
+      color: hotpink;
+      position: absolute;
+      transition: 0.1s;
+      z-index: 6;
+    }
+    .cardInside {
+      position: absolute;
+      background-color: #fef0f8;
+      width: 420px;
+      height: 500px;
+      z-index: -1;
+      left: 0;
+      border-radius: 0 15px 15px 0;
+      top: 0;
+      box-shadow: inset 100px 20px 100px rgba(191, 190, 190, 0.2);
+    }
+    p {
+      line-height: 30px;
+      margin: 15px 10px 10px 30px;
+      color: #333;
+    }
+    .back {
+      font-family: Tahoma, sans-serif;
+      color: #333;
+      text-align: center;
+      margin: 30px;
+    }
+    .birthdayCard:hover {
+      transform: perspective(2500px) rotate(5deg);
+      box-shadow: inset 100px 20px 100px rgba(116, 115, 115, 0.5),
+        0 10px 100px rgba(116, 115, 115, 0.5);
+    }
+    .birthdayCard:hover .cardFront {
+      transform: rotateY(-160deg);
+    }
+    .birthdayCard:hover .happy {
+      visibility: hidden;
+    }
+    /* tombol musik */
+    .musicBtn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: hotpink;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    .musicBtn:hover {
+      background: deeppink;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Ulang Tahun -->
+  <div style="text-align:center; margin-bottom:10px;">
+    <audio id="bg-music" autoplay loop>
+      <source src="https://raw.githubusercontent.com/fthdns/tmp_foto/main/hbd.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio.
+    </audio>
+    <button class="musicBtn" onclick="playMusic()">▶️ Play Music</button>
+  </div>
+
+  <div class="body">
+    <div class="birthdayCard">
+      <div class="cardFront">
+        <img
+          src="https://github.com/DzarelDeveloper/Img/blob/main/ballon.png?raw=true"
+          class="balloons"
+          alt="balloons"
+        />
+        <img
+          src="https://github.com/DzarelDeveloper/Img/blob/main/hat.png?raw=true"
+          alt="bdHat"
+          class="bdHat"
+        />
+        <img
+          src="https://github.com/fthdns/tmp_foto/blob/main/471-4715926_cat-cute-cats-bff-cute-cat-cartoon-png-removebg-preview.png?raw=true"
+          alt="cat"
+          class="cat"
+        />
+        <img 
+          src="https://github.com/fthdns/tmp_foto/blob/main/kintan_20250823.jpg?raw=true" 
+          alt="Kintannn:3" 
+          class="taaImg" 
+        />
+        <h2 class="happy">Happy Birthday to Kintannn!!</h2>
+      </div>
+      <div class="cardInside">
+        <h3 class="back">HAPPY BIRTHDAY KINTANN!</h3>
+        <p>From Fatih,</p>
+        <p>
+          May this year bring you great happiness and personal growth!<br>
+          May you become a better person every day. I wish you the best—improvement, authenticity, and gratitude. Most importantly, may you have a long and healthy life, continued success, abundant fortune. Best prayers for you Kintan&lt;3 🎉🎂❤️🥂
+        </p>
+        <p>~ Fatih </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById("bg-music");
+      music.play();
+    }
+  </script>
+</body>
+</html>
